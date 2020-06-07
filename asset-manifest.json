@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ff407e6.chunk.css",
-    "main.js": "/static/js/main.3288febb.chunk.js",
-    "main.js.map": "/static/js/main.3288febb.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.27d30a47.js",
-    "runtime-main.js.map": "/static/js/runtime-main.27d30a47.js.map",
-    "static/js/2.0b391f30.chunk.js": "/static/js/2.0b391f30.chunk.js",
-    "static/js/2.0b391f30.chunk.js.map": "/static/js/2.0b391f30.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.01d174e21d3dad0d69fbad7485eafea5.js": "/precache-manifest.01d174e21d3dad0d69fbad7485eafea5.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.3ff407e6.chunk.css.map": "/static/css/main.3ff407e6.chunk.css.map",
-    "static/js/2.0b391f30.chunk.js.LICENSE.txt": "/static/js/2.0b391f30.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/static/media/Roboto-Regular.11eabca2.ttf",
-    "static/media/all.jpg": "/static/media/all.9574c6cf.jpg"
+    "main.css": "/impress/static/css/main.bed3475f.chunk.css",
+    "main.js": "/impress/static/js/main.3288febb.chunk.js",
+    "main.js.map": "/impress/static/js/main.3288febb.chunk.js.map",
+    "runtime-main.js": "/impress/static/js/runtime-main.182fd135.js",
+    "runtime-main.js.map": "/impress/static/js/runtime-main.182fd135.js.map",
+    "static/js/2.0b391f30.chunk.js": "/impress/static/js/2.0b391f30.chunk.js",
+    "static/js/2.0b391f30.chunk.js.map": "/impress/static/js/2.0b391f30.chunk.js.map",
+    "index.html": "/impress/index.html",
+    "precache-manifest.d96ec5dcf48e5c8cc370bee5de75cbe6.js": "/impress/precache-manifest.d96ec5dcf48e5c8cc370bee5de75cbe6.js",
+    "service-worker.js": "/impress/service-worker.js",
+    "static/css/main.bed3475f.chunk.css.map": "/impress/static/css/main.bed3475f.chunk.css.map",
+    "static/js/2.0b391f30.chunk.js.LICENSE.txt": "/impress/static/js/2.0b391f30.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/impress/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/all.jpg": "/impress/static/media/all.9574c6cf.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.27d30a47.js",
+    "static/js/runtime-main.182fd135.js",
     "static/js/2.0b391f30.chunk.js",
-    "static/css/main.3ff407e6.chunk.css",
+    "static/css/main.bed3475f.chunk.css",
     "static/js/main.3288febb.chunk.js"
   ]
 }
