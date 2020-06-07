@@ -1,0 +1,18 @@
+@mixin image-scale($pxWrapperWidth, $pxWrapperHeight, $imageWidth, $imageHeight, $scale, $left, $top) {
+    $scaled-left: -$imageWidth*(1-$scale)/2 - ( $left*$scale - $pxWrapperWidth/2 );
+    $scaled-top: -$imageHeight*(1-$scale)/2 - ( $top*$scale - $pxWrapperHeight/2 );
+
+    overflow: hidden;
+    width: $pxWrapperWidth;
+    height: $pxWrapperHeight;
+    img{
+        position: relative;
+        transform: translateX($scaled-left) translateY($scaled-top) scale($scale);
+    }
+}
+
+@mixin image-scale-with-classname($className, $pxWrapperWidth, $pxWrapperHeight, $imageWidth, $imageHeight, $scale, $left, $top){
+    &.#{$className}{
+        @include image-scale($pxWrapperWidth, $pxWrapperHeight, $imageWidth, $imageHeight, $scale, $left, $top)
+    }
+}

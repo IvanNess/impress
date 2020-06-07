@@ -1,0 +1,59 @@
+@import '../../../App.scss';
+
+.panel-item-wrapper{
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    .panel-item{
+        //padding: 0 1em;
+        font-family: $mainFont;
+        cursor: pointer;
+        &:not(.alert)::after{
+            display: block;
+            content: '';
+            border-bottom: solid 3px transparent;
+        }
+        &:not(.alert):hover::after{
+            display: block;
+            content: '';
+            border-bottom: solid 3px red;
+            -webkit-animation: scale-up 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+                    animation: scale-up 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+        &.alert{
+            background-color: $alertColor;
+            padding: 0.4em 0.5em;
+            border-radius: 3px;
+            color: white;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+            &:hover{
+                background-color: $regularColor;
+                color: black;;
+            }
+        }
+    }
+}
+
+@keyframes scale-up{
+    0%{
+        -webkit-transform: translateX(-50%) scaleX(0);
+                transform: translateX(-50%) scaleX(0);
+    }
+    100%{
+        -webkit-transform: translateX(0) scaleX(1.0);
+                transform: translateX(0) scaleX(1.0);
+    }
+}
+
+@-webkit-keyframes scale-up{
+    0%{
+        -webkit-transform: translateX(-50%) scaleX(0);
+                transform: translateX(-50%) scaleX(0);
+    }
+    100%{
+        -webkit-transform: translateX(0) scaleX(1.0);
+                transform: translateX(0) scaleX(1.0);
+    }
+}

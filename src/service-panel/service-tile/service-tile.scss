@@ -1,0 +1,32 @@
+@import '../../utils.scss';
+@import '../../App.scss';
+
+.service-tile{
+    width: 13em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $regularColor;
+    padding: 2.3em 0.7em;
+    margin-bottom: 0.7em;
+    .image-wrapper{
+        @include image-scale-with-classname(all, 45px, 45px, 868px, 1017px, 0.8, 30px, 255px);
+        @include image-scale-with-classname(scenario, 45px, 45px, 868px, 1017px, 0.8, 90px, 132px);
+        @include image-scale-with-classname(film, 45px, 45px, 868px, 1017px, 0.8, 150px, 135px);
+        @include image-scale-with-classname(animation, 45px, 45px, 868px, 1017px, 0.8, 30px, 195px);
+        @include image-scale-with-classname(edit, 45px, 45px, 868px, 1017px, 0.8, 90px, 195px);
+        @include image-scale-with-classname(dubbing, 45px, 45px, 868px, 1017px, 0.8, 145px, 190px);
+        @include image-scale-with-classname(language, 45px, 45px, 868px, 1017px, 0.8, 90px, 195px);
+        @include image-scale-with-classname(budget, 45px, 45px, 868px, 1017px, 0.8, 145px, 190px);
+    }
+    .title{
+        display: flex;
+        text-align: center;
+        @include main;
+    }
+    .description{
+        display: flex;
+        text-align: center;
+        @include regular-small;
+    }
+}

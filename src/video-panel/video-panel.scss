@@ -1,0 +1,26 @@
+@import '../App.scss' ;
+
+.video-panel{
+    -webkit-perspective: 1000;
+    .video-tiles{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .load-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .load{
+            @include regular;    
+            &:hover{
+                color: $alertColor;
+                cursor: pointer;
+            }
+            &.none{
+                display: none;
+            }
+        }
+    }
+}

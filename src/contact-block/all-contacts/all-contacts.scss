@@ -1,0 +1,33 @@
+@import '../../App.scss';
+@import '../../utils.scss';
+
+.all-contacts{
+    height: 21.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title{
+        @include regular;
+    }
+    .content{
+        @include regular;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .image-wrapper{
+        @include image-scale-with-classname(a1, 30px, 30px, 868px, 1017px, 0.8, 400px, 825px);
+        @include image-scale-with-classname(wattsapp, 30px, 30px, 868px, 1017px, 0.8, 440px, 825px);
+        @include image-scale-with-classname(viber, 30px, 30px, 868px, 1017px, 0.8, 483px, 825px);
+        @include image-scale-with-classname(telegram, 30px, 30px, 868px, 1017px, 0.8, 525px, 825px);
+        @include image-scale-with-classname(instagram, 35px, 35px, 868px, 1017px, 0.8, 568px, 827px);
+        @include image-scale-with-classname(facebook, 35px, 35px, 868px, 1017px, 0.8, 612px, 827px);
+        @include image-scale-with-classname(vk, 35px, 35px, 868px, 1017px, 0.8, 654px, 827px);
+        @include image-scale-with-classname(youtube, 35px, 35px, 868px, 1017px, 0.8, 698px, 827px);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+}

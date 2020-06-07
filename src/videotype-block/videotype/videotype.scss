@@ -1,0 +1,32 @@
+@import '../../utils.scss';
+@import '../../App.scss';
+
+.videotype{
+    width: 15em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    .image-wrapper{
+        @include image-scale-with-classname(explainer, 45px, 45px, 868px, 1017px, 0.8, 30px, 135px);
+        @include image-scale-with-classname(learning, 45px, 45px, 868px, 1017px, 0.8, 90px, 132px);
+        @include image-scale-with-classname(presentation, 45px, 45px, 868px, 1017px, 0.8, 150px, 135px);
+        @include image-scale-with-classname(advideo, 45px, 45px, 868px, 1017px, 0.8, 30px, 195px);
+        @include image-scale-with-classname(videoblog, 45px, 45px, 868px, 1017px, 0.8, 90px, 195px);
+        @include image-scale-with-classname(videocontent, 45px, 45px, 868px, 1017px, 0.8, 145px, 190px);
+    }
+    &.learning{
+        width: 14em;
+    }
+    .title{
+        font-family: $mainFont;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .description{
+        font-family: $regularFont;
+        font-size: 1.1em;
+    }
+}

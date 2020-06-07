@@ -1,0 +1,35 @@
+@import '../App.scss';
+
+$barWidth: 10em;
+
+.color-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 0.5em;
+    .bar{
+        width: $barWidth;
+        animation: move 5.0s linear infinite;
+        &.alert-color{
+            background-color: $alertColor;
+        }
+        &.prime-color{
+            background-color: $primeColor;
+        }
+        &.aux-color{
+            background-color: $auxColor;
+        }
+        &.regular-color{
+            background-color: $regularColor;
+        }
+    }
+}
+
+@keyframes move{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(4 * $barWidth);
+    }
+}

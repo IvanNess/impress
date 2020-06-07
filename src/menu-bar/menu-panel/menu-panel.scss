@@ -1,0 +1,32 @@
+$transitiionPoint: 40em;
+
+.menu-panel{
+    display: flex;
+    align-items: center;
+    position: relative;
+    .shortcut{
+        display: none;
+        @media only all and (max-width: $transitiionPoint){
+            display: flex;
+            padding: 0 1.5em;
+        }
+    }
+    .full{
+        @media only all and (max-width: $transitiionPoint){
+            display: none;
+            &.show{
+                width: auto;
+                padding: 0 1em;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 2em;
+                left: 0;
+                text-align: center;
+            }
+        }
+        width: 23em;
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,118 @@
+@import '../utils';
+@import '../App.scss';
+
+@mixin up-down($name, $start, $end, $duration,  $delay) {
+    animation: up-down-#{$name} $duration linear $delay ;
+
+    @keyframes up-down-#{$name}{
+        0%{
+            background-color: rgb(255, 105, 105);
+            transform: translateY($start);
+        }
+        50%{
+            background-color: rgb(255, 105, 180);
+        }
+        100%{
+            transform: translateY($end);
+            background-color: rgb(255, 105, 105);
+        }
+    }
+}
+
+@mixin left-right($name, $start, $end, $duration, $delay) {
+    animation: left-right-#{$name} $duration linear $delay ;
+    @keyframes left-right-#{$name}{
+        0%{
+            transform: translateX($start);
+            background-color: rgb(255, 105, 105);
+        }
+        50%{
+            background-color: rgb(255, 105, 180);
+        }
+        100%{
+            transform: translateX($end);
+            background-color: rgb(255, 105, 105);
+        }
+    }
+}
+
+.welcome-block{
+    padding-top: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: $regularFont;
+    font-size: 1.4em;
+    .welcome-text{
+        width: 16em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .welcome-headline{
+            font-family: $mainFont;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .welcome-order{
+            color: #FF2A00;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .animation-wrapper{ 
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .left-right-wrapper{
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;   
+            .welcome-image-wrapper{
+                @include image-scale(512px, 304px, 868px, 1017px, 0.8, 548px, 190px);
+                margin: 1em;
+            }
+            .left, .right{
+                width: 5px;
+                border-radius: 5px;
+                //height: 100%;
+            }
+            .left{
+                &.first{
+                    @include up-down(first, 0%, 100%, 2s, 0s); //6s 
+                }
+            }
+            .left{
+                &.animation{
+                    @include up-down(up, -100%, 100%, 4s, 0s); //6s 
+                }
+            }
+            .right{
+                &.animation{
+                    @include up-down(down, 100%, -100%, 4s, 0s); //2s
+                }
+            }
+        }
+        .top, .bottom{
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            //background-color: goldenrod;
+        }
+        .top{
+            &.animation{
+                @include left-right(left, 100%, -100%, 4s, 0s); //4s
+            }
+        }
+        .bottom{
+            &.animation{
+                @include left-right(bottom, -100%, 100%, 4s, 0s); //0s
+            }
+            
+        }
+    }
+}
+
+
+
+

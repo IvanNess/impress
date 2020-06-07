@@ -1,0 +1,12 @@
+@import '../utils.scss';
+@import '../App.scss';
+
+.menu-bar{
+    padding-top: 2em;
+    .logo-wrapper{
+        @include image-scale(155px, 72px, 868px, 1017px, 0.8, 115px, 56px);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

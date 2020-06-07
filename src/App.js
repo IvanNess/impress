@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
+
+import store from './store'
+import MenuBar from './menu-bar'
+import WelcomeBlock from './welcome-block'
+import VideotypeBlock from './videotype-block'
+import HeadBlock from './head-block'
+import VideoPanel from './video-panel'
+import ServicePanel from './service-panel'
+import ContactBlock from './contact-block'
+import Footer from './footer'
+import ColorBar from './color-bar';
+
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="app-wrapper" onClick={()=>{
+          if(store.getState().showPanelItems===true)
+            store.dispatch({type: 'SET_SHOW_PANEL_ITEMS', payload: false})
+        }}>
+        <div className="app">
+          <MenuBar />
+          <WelcomeBlock/>
+          <VideotypeBlock/>
+          <HeadBlock idx={'0'}/>
+          <VideoPanel/>
+          <HeadBlock idx={'1'}/>
+          <ServicePanel/>
+          <HeadBlock idx={'2'}/>
+          <ContactBlock/>
+        </div>
+        <Footer/>
+        <ColorBar/>
+      </div>
+    </Provider>
   );
 }
 

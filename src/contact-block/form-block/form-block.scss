@@ -1,0 +1,53 @@
+@import '../../App.scss';
+
+.form-block{
+    width: 65%;
+    .form-wrapper{
+        form{
+            display: flex;
+            flex-direction: column;
+            @include regular;
+            input, textarea{
+                background-color: $auxColor;
+                border: 1px solid rgba(1, 1, 1, 0.3);
+                border-radius: 2px;
+                margin-bottom: 1.5em;
+            }
+            input{
+                height: 2.5em;
+            }
+            textarea{
+                height: 10em;
+                resize: none;
+            }
+            button{
+                background-color: $alertColor;
+                padding: 0.5em;
+                width: 7em;
+                border-radius: 5px;
+                color: white;
+                border: none;
+                transition-duration: 0.5s;
+                transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                &:hover{
+                    color: $primeColor;
+                    background-color: $regularColor;
+                    cursor: pointer;
+                }
+                &:focus{
+                    border: none;
+                    border-radius: 5px;
+                    outline: none
+                }
+            }
+            .name-with-error{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .error{
+                    color: $alertColor;
+                }
+            }
+        }
+    }   
+}

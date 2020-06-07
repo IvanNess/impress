@@ -1,0 +1,60 @@
+@font-face{
+    font-family: 'Roboto';
+    src: url(Roboto-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'Garamond';
+    src: url(EBGaramond-Regular.ttf);
+}
+
+$mainFont: Roboto;
+$regularFont: Garamond;
+
+@mixin regular{
+    font-family: $regularFont;
+    font-size: 1.4em;
+}
+
+@mixin regular-small{
+    font-family: $regularFont;
+    font-size: 1.1em;
+}
+
+@mixin main{
+    font-family: $mainFont;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+$alertColor: #FF2A00;
+$regularColor: #C9EC23;
+$primeColor: #00171F;
+$auxColor: #E4EDF1;
+
+$width: 60em;
+
+p, h1{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    @include main()
+}
+
+.app-wrapper{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .app{
+        width: $width;
+        .menu-bar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}

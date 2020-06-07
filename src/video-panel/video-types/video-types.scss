@@ -1,0 +1,21 @@
+@import '../../App.scss';
+
+.video-types{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2em;
+    width: 25em;
+    .video-type{
+        @include regular;
+        color: rgba(1, 1, 1, 0.5);
+        &:hover{
+            cursor: pointer;
+            //color: $alertColor;
+        }
+        &.filtering{
+            border-bottom: 2px solid $regularColor;
+            color: $primeColor;
+        }
+    }
+}
