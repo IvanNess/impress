@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/impress/static/css/main.b7f921cd.chunk.css",
-    "main.js": "/impress/static/js/main.26be35d3.chunk.js",
-    "main.js.map": "/impress/static/js/main.26be35d3.chunk.js.map",
+    "main.css": "/impress/static/css/main.6f0bc0a7.chunk.css",
+    "main.js": "/impress/static/js/main.130406f5.chunk.js",
+    "main.js.map": "/impress/static/js/main.130406f5.chunk.js.map",
     "runtime-main.js": "/impress/static/js/runtime-main.182fd135.js",
     "runtime-main.js.map": "/impress/static/js/runtime-main.182fd135.js.map",
     "static/js/2.0b391f30.chunk.js": "/impress/static/js/2.0b391f30.chunk.js",
     "static/js/2.0b391f30.chunk.js.map": "/impress/static/js/2.0b391f30.chunk.js.map",
     "index.html": "/impress/index.html",
-    "precache-manifest.1b900164b7947fc4fa3f02d1a738fcaa.js": "/impress/precache-manifest.1b900164b7947fc4fa3f02d1a738fcaa.js",
+    "precache-manifest.79861e784a4b2b6abb552a8b13aab654.js": "/impress/precache-manifest.79861e784a4b2b6abb552a8b13aab654.js",
     "service-worker.js": "/impress/service-worker.js",
-    "static/css/main.b7f921cd.chunk.css.map": "/impress/static/css/main.b7f921cd.chunk.css.map",
+    "static/css/main.6f0bc0a7.chunk.css.map": "/impress/static/css/main.6f0bc0a7.chunk.css.map",
     "static/js/2.0b391f30.chunk.js.LICENSE.txt": "/impress/static/js/2.0b391f30.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/impress/static/media/Roboto-Regular.11eabca2.ttf",
     "static/media/all.jpg": "/impress/static/media/all.9574c6cf.jpg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.182fd135.js",
     "static/js/2.0b391f30.chunk.js",
-    "static/css/main.b7f921cd.chunk.css",
-    "static/js/main.26be35d3.chunk.js"
+    "static/css/main.6f0bc0a7.chunk.css",
+    "static/js/main.130406f5.chunk.js"
   ]
 }
