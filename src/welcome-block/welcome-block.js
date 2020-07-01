@@ -1,80 +1,73 @@
 import React, { useEffect, useState } from 'react'
+import lozad from 'lozad'
 
-import image from '../images/all.jpg'
+import image from '../images/placeholder.jpg'
+import video from '../videos/videomini.mp4'
 
 import './welcome-block.scss'
 
 const WelcomeBlock = () => {
+
+    useEffect(()=>{
+        const observer = lozad() // lazy loads elements with default selector as '.lozad'
+        observer.observe()
+    }, [])
 
     const [topAnimation, setTopAnimation] = useState(false)
     const [bottomAnimation, setBottomAnimation] = useState(false)
     const [leftAnimation, setLeftAnimation] = useState(false)
     const [rightAnimation, setRightAnimation] = useState(false)
 
-    const [first, setFirst] = useState(true)
+    const [first, setFirst] = useState(false)
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-        setTimeout(()=>{
-            setFirst(false)
-        }, 2100)
+    //     console.log('WELCOME_BLOCK')
 
-        setTimeout(()=>{
-            setBottomAnimation(true)
-        }, 0)
-        setTimeout(()=>{
-            setRightAnimation(true)
-        }, 2000)
-        setTimeout(()=>{
-            setTopAnimation(true)
-        }, 4000)
-        setTimeout(()=>{
-            setLeftAnimation(true)
-        }, 6000)
+    //     const t = 2000
 
-        setTimeout(()=>{
-            setBottomAnimation(false)
-        }, 4100)
-        setTimeout(()=>{
-            setRightAnimation(false)
-        }, 6100)
-        setTimeout(()=>{
-            setTopAnimation(false)
-        }, 8100)
-        setTimeout(()=>{
-            setLeftAnimation(false)
-        }, 10100)
+    //     setTimeout(()=>{
+    //         setFirst(false)
+    //     }, t+100)
 
-        setInterval(()=>{
 
-            setTimeout(()=>{
-                setBottomAnimation(true)
-            }, 0)
-            setTimeout(()=>{
-                setRightAnimation(true)
-            }, 2000)
-            setTimeout(()=>{
-                setTopAnimation(true)
-            }, 4000)
-            setTimeout(()=>{
-                setLeftAnimation(true)
-            }, 6000)
+    //     const timeout = ()=>{
+    //         setTimeout(()=>{
+    //             setTopAnimation(false)
+    //             setBottomAnimation(true)
 
-            setTimeout(()=>{
-                setBottomAnimation(false)
-            }, 4100)
-            setTimeout(()=>{
-                setRightAnimation(false)
-            }, 6100)
-            setTimeout(()=>{
-                setTopAnimation(false)
-            }, 8100)
-            setTimeout(()=>{
-                setLeftAnimation(false)
-            }, 10100)
+    //             setTimeout(()=>{
+    //                 setLeftAnimation(false)
+    //                 setRightAnimation(true)
 
-        }, 8000)
-    }, [])
+    //                 setTimeout(()=>{
+    //                     setBottomAnimation(false)
+    //                     setTopAnimation(true)
+
+    //                     setTimeout(()=>{
+    //                         setRightAnimation(false)
+    //                         setLeftAnimation(true)
+
+    //                         setTimeout(()=>{
+    //                             timeout()
+    //                         }, t)
+
+    //                     }, t)
+
+    //                 }, t)
+
+    //             }, t)
+
+    //         }, 0)
+
+    //     }
+
+
+    //     requestAnimationFrame(()=>{
+    //         timeout()
+    //     })
+
+    // }, [])
 
 
 
@@ -102,7 +95,7 @@ const WelcomeBlock = () => {
 
                 </div>
             </div>
-            <div className={`animation-wrapper`}>
+            {/* <div className={`media-wrapper`}>
                 <div className={`top ${topAnimation && 'animation'}`} ></div>
                 <div className={`left-right-wrapper`}>
                     <div className={`left ${leftAnimation && 'animation'} ${first? 'first': ''}`} ></div>
@@ -112,6 +105,17 @@ const WelcomeBlock = () => {
                     <div className={`right ${rightAnimation && 'animation'}`} ></div>
                 </div>
                 <div className={`bottom ${bottomAnimation && 'animation'}`} ></div>
+            </div> */}
+
+            <div className={`media-wrapper`}>
+                <video 
+                    data-poster={image}
+                    className="lozad"
+                    autoPlay muted loop playsInline 
+                    width="512" height="304"
+                >
+                    <source data-src={video} type="video/mp4" />
+                </video>
             </div>
         </div>
     )

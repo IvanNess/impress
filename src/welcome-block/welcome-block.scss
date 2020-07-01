@@ -2,7 +2,7 @@
 @import '../App.scss';
 
 @mixin up-down($name, $start, $end, $duration,  $delay) {
-    animation: up-down-#{$name} $duration linear $delay ;
+    animation: up-down-#{$name} $duration linear $delay infinite;
 
     @keyframes up-down-#{$name}{
         0%{
@@ -20,7 +20,7 @@
 }
 
 @mixin left-right($name, $start, $end, $duration, $delay) {
-    animation: left-right-#{$name} $duration linear $delay ;
+    animation: left-right-#{$name} $duration linear $delay infinite;
     @keyframes left-right-#{$name}{
         0%{
             transform: translateX($start);
@@ -44,13 +44,13 @@
     font-family: $regularFont;
     font-size: 1.4em;
     .welcome-text{
-        width: 16em;
+        width: 22rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         .welcome-headline{
             font-family: $mainFont;
-            font-size: 1.5em;
+            font-size: 1.8rem;
             font-weight: bold;
         }
         .welcome-order{
@@ -60,7 +60,7 @@
             }
         }
     }
-    .animation-wrapper{ 
+    .media-wrapper{ 
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -70,32 +70,32 @@
             overflow: hidden;   
             .welcome-image-wrapper{
                 @include image-scale(512px, 304px, 868px, 1017px, 0.8, 548px, 190px);
-                margin: 1em;
+                margin: 0em;
             }
             .left, .right{
-                width: 5px;
+                width: 0px;
                 border-radius: 5px;
                 //height: 100%;
             }
             .left{
                 &.first{
-                    @include up-down(first, 0%, 100%, 2s, 0s); //6s 
+                    @include up-down(first, 0%, 100%, 2s, 0s); //6s  
                 }
             }
             .left{
                 &.animation{
-                    @include up-down(up, -100%, 100%, 4s, 0s); //6s 
+                    @include up-down(up, -100%, 100%, 4s, 2s); //6s 
                 }
             }
             .right{
                 &.animation{
-                    @include up-down(down, 100%, -100%, 4s, 0s); //2s
+                    @include up-down(down, 100%, -100%, 4s, 2s); //2s
                 }
             }
         }
         .top, .bottom{
             width: 100%;
-            height: 5px;
+            height: 0px;
             border-radius: 5px;
             //background-color: goldenrod;
         }

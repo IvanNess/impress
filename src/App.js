@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Provider } from 'react-redux'
 
 import store from './store'
@@ -12,7 +12,7 @@ import ContactBlock from './contact-block'
 import Footer from './footer'
 import ColorBar from './color-bar';
 
-import './App.scss';
+import './App.scss'
 
 function App() {
   return (

@@ -1,12 +1,40 @@
 @import '../utils.scss';
 @import '../App.scss';
 
+@mixin word-animation {
+    animation: word-animation 4.8s linear infinite;
+
+    @keyframes word-animation {
+        0%{
+            fill: red//linear-gradient(56deg, #21D4FD 0%, #B721FF 100%);
+        }
+        
+        50%{
+            fill: orange//linear-gradient(63deg, #FEE140 0%, #FA709A 100%);
+        }
+        
+        100%{
+            fill: red
+        }
+    }
+}
+
 .menu-bar{
     padding-top: 2em;
     .logo-wrapper{
-        @include image-scale(155px, 72px, 868px, 1017px, 0.8, 115px, 56px);
+        //@include image-scale(155px, 72px, 868px, 1017px, 0.8, 115px, 56px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         &:hover{
             cursor: pointer;
+        }
+    }
+    .word{
+        @include word-animation();
+        &:hover{
+            animation: none;
+            fill: greenyellow
         }
     }
 }
