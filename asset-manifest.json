@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/impress/static/css/main.e3d5d4bf.chunk.css",
+    "main.css": "/impress/static/css/main.ef258ab5.chunk.css",
     "main.js": "/impress/static/js/main.1ebe2e3f.chunk.js",
     "main.js.map": "/impress/static/js/main.1ebe2e3f.chunk.js.map",
     "runtime-main.js": "/impress/static/js/runtime-main.182fd135.js",
@@ -8,9 +8,9 @@
     "static/js/2.fa3e7bf4.chunk.js": "/impress/static/js/2.fa3e7bf4.chunk.js",
     "static/js/2.fa3e7bf4.chunk.js.map": "/impress/static/js/2.fa3e7bf4.chunk.js.map",
     "index.html": "/impress/index.html",
-    "precache-manifest.9c77135a1a574c0fbc1d7123a2002ec0.js": "/impress/precache-manifest.9c77135a1a574c0fbc1d7123a2002ec0.js",
+    "precache-manifest.4b2783e0caef5d62f43a1cde4cee0dae.js": "/impress/precache-manifest.4b2783e0caef5d62f43a1cde4cee0dae.js",
     "service-worker.js": "/impress/service-worker.js",
-    "static/css/main.e3d5d4bf.chunk.css.map": "/impress/static/css/main.e3d5d4bf.chunk.css.map",
+    "static/css/main.ef258ab5.chunk.css.map": "/impress/static/css/main.ef258ab5.chunk.css.map",
     "static/js/2.fa3e7bf4.chunk.js.LICENSE.txt": "/impress/static/js/2.fa3e7bf4.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/impress/static/media/Roboto-Regular.11eabca2.ttf",
     "static/media/all.jpg": "/impress/static/media/all.9574c6cf.jpg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.182fd135.js",
     "static/js/2.fa3e7bf4.chunk.js",
-    "static/css/main.e3d5d4bf.chunk.css",
+    "static/css/main.ef258ab5.chunk.css",
     "static/js/main.1ebe2e3f.chunk.js"
   ]
 }
