@@ -19,15 +19,19 @@
         color: $common-font-color;
         background-color: $selected-background-color;
     }
+    &.error{
+        //border: 1px solid red;
+        box-shadow: $error-box-shadow;
+        transition-duration: 0s;
+        &:hover{
+            box-shadow: 0 0 5px $selected-color;
+        }
+    }
     &:not(.selected):hover{
         box-shadow: 0 0 5px $selected-color;
         cursor: pointer;
         color: $common-font-color;
-
     }
-    &.error{
-        //border: 1px solid red;
-        box-shadow: $error-box-shadow;
-    }
+    
 }
 

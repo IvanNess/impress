@@ -29,19 +29,31 @@ const getFormErrors = (calc)=>{
     if (calc.clicked.auxTypes.length === 0) {
         errorParts.push('auxTypes')
     }
+ 
+    // const noServiceTypesErrors = calc.clicked.serviceTypes.some(stringCode=>{
+    //     const type = calc.serviceTypes.find(type=>{
+    //         return type.stringCode===stringCode
+    //     })
+    //     return(
+    //         !type.auxPanel ? true : 
+    //             ![0, ''].includes(type.auxPanel.value)? true: false   
+    //     )
+    // })
 
-    const noServiceTypesErrors = calc.clicked.serviceTypes.some(stringCode=>{
-        const type = calc.serviceTypes.find(type=>{
-            return type.stringCode===stringCode
+    // if ((calc.clicked.serviceTypes.length === 0 || !noServiceTypesErrors) && calc.clicked.auxTypes.length !== 0 ) {
+    //     errorParts.push('serviceTypes')
+    // }
+
+    let errorServices = []//сюда будут добавляться сервисы с ошибками. если все с ошибками(не один не выделен), то значение будет 'all'
+    if(calc.clicked.serviceTypes.length===0){
+        errorServices = 'all'
+    } else{
+        calc.clicked.serviceTypes.forEach(serviceName=>{
+            const service = calc.serviceTypes.find(service=>service.stringCode===serviceName)
+            if(service.auxPanel && [0, ''].includes(service.auxPanel.value)){
+                errorServices.push(serviceName)
+            }
         })
-        return(
-            !type.auxPanel ? true : 
-                ![0, ''].includes(type.auxPanel.value)? true: false   
-        )
-    })
-
-    if ((calc.clicked.serviceTypes.length === 0 || !noServiceTypesErrors) && calc.clicked.auxTypes.length !== 0 ) {
-        errorParts.push('serviceTypes')
     }
 
     const email = calc.connectTypes.find(type => type.stringCode === 'email')
@@ -65,9 +77,10 @@ const getFormErrors = (calc)=>{
 
     console.log(errorParts.length,  !emptyFields, !wrongEmail, !wrongMessengers)
 
-    if (errorParts.length === 0 && !emptyFields && (!wrongEmail || !wrongMessengers))
+    if (errorParts.length === 0 && !emptyFields && (!wrongEmail || !wrongMessengers) && errorServices!=='all' && errorServices.length===0)
         return {
             show: false,
+            errorServices,
             errorParts: [],
             contactErrors: { emptyFields: false, wrongEmail: false, wrongMessengers: false }
         }
@@ -75,6 +88,7 @@ const getFormErrors = (calc)=>{
     return {
         show: true,
         errorParts,
+        errorServices,
         contactErrors: { emptyFields, wrongEmail, wrongMessengers }
     }
 }
@@ -101,7 +115,7 @@ const onCountClick = (calc, doFetch, showErrors, appClicked, isLoading)=>{
     if(isLoading){
         return
     }
-    const {show, errorParts, contactErrors} = getFormErrors(calc)
+    const {show, errorParts, contactErrors, errorServices} = getFormErrors(calc)
     console.log({show, errorParts, contactErrors})
     if(!show){
         console.log('do fetch...')
@@ -133,8 +147,9 @@ const onCountClick = (calc, doFetch, showErrors, appClicked, isLoading)=>{
         console.log('open window')
         // openWindow({show, errorParts, contactErrors})
         // e.stopPropagation()
-        showErrors({show, errorParts, contactErrors})
+        showErrors({show, errorParts, contactErrors, errorServices})
         appClicked()
+        return 'error'
     }
 } 
 

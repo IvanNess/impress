@@ -6,7 +6,8 @@ import {onCountClick} from '../utils'
 
 import './calc-btn.scss'
 
-const url = 'https://sleepy-chamber-55762.herokuapp.com/'
+//const url = 'https://sleepy-chamber-55762.herokuapp.com/'
+const url = process.env.REACT_APP_SERVER_URI
 
 const CalcButton = ({calc, setLoading, setFetchData, setFetchError, openWindow, appClicked, showErrors})=>{
 
@@ -33,7 +34,11 @@ const CalcButton = ({calc, setLoading, setFetchData, setFetchError, openWindow, 
             <div 
                 className={`btn ${loading}`} 
                 onClick={(e)=>{
-                    onCountClick(calc, doFetch, showErrors, appClicked, isLoading)
+                    console.log('URI', url, process)
+                    const res = onCountClick(calc, doFetch, showErrors, appClicked, isLoading)
+                    if(res==='error'){
+                        setFetchError('red_squares')
+                    }
                 }}
             >
                 Рассчитать

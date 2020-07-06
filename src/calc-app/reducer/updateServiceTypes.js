@@ -363,9 +363,12 @@ const updateServiceTypes = (state, {type, payload})=>{
                 if(['nomoremin', 'nomoresec'].includes(type.stringCode)){
                     type.error = payload.errorParts.includes('chrono')? true: false
                 } else{
-                    type.error = payload.errorParts.includes('serviceTypes')? true: false
+                    //type.error = payload.errorParts.includes('serviceTypes')? true: false
+                    type.error = payload.errorServices==='all'? true: 
+                        payload.errorServices.includes(type.stringCode)? true: false
                 }
             })
+
             console.log('SHOW_ERRORS', newTypes, payload)
             return newTypes
         
@@ -427,6 +430,7 @@ const updateServiceTypes = (state, {type, payload})=>{
                     newType.auxPanel.open = false
                     if(state.calc.clicked.serviceTypes.includes(payload.stringCode)){
                         newType.auxPanel.value = ''
+                        newType.error = false
                     } else{
                         newType.auxPanel.focused = true
                         console.log('APPLY FOCUS', newType)
@@ -459,11 +463,17 @@ const updateServiceTypes = (state, {type, payload})=>{
                     newTypes = newTypesCopy
                 }
                 
-                newTypes.forEach(type=>{
-                    if(!['nomoremin', 'nomoresec'].includes(type.stringCode))
-                        type.error=false
-                })
-                
+                // newTypes.forEach(type=>{
+                //     if(!['nomoremin', 'nomoresec'].includes(type.stringCode))
+                //         type.error=false
+                // })
+
+                if(state.calc.clicked.serviceTypes.length===0){
+                    newTypes.forEach(type=>{
+                        if(!['nomoremin', 'nomoresec'].includes(type.stringCode))
+                            type.error=false
+                    })
+                }
                 return newTypes
             }
 
@@ -521,14 +531,18 @@ const updateServiceTypes = (state, {type, payload})=>{
                 
                 if(![0, ''].includes(newType.auxPanel.value)){
                     if(!['nomoremin', 'nomoresec'].includes(payload.stringCode)){
-                        newTypes.forEach(type=>{
-                            type.error = !['nomoremin', 'nomoresec'].includes(type.stringCode)? false: type.error
-                        })
-                    } else{
+                    //     newTypes.forEach(type=>{
+                    //         type.error = !['nomoremin', 'nomoresec'].includes(type.stringCode)? false: type.error
+                    //     })
+                    // } else{
+                    //     newTypes.forEach(type=>{
+                    //         type.error = ['nomoremin', 'nomoresec'].includes(type.stringCode)? false: type.error
+                    //     })
+                    newType.error = false
+                    }else{
                         newTypes.forEach(type=>{
                             type.error = ['nomoremin', 'nomoresec'].includes(type.stringCode)? false: type.error
-                        })
-                    }
+                    })}
                 }
 
                 return newTypes

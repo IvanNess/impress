@@ -26,7 +26,8 @@ const CalcDisplay = ({error, data, isLoading})=>{
                 <p>Подождите. Происходит просчет...</p>
             </div>}
             {error && <div className={`error`}>
-                <p>Ивините, произошла ошибка...</p>
+                {error==='red_squares'? <p>Выберите или заполните выделенные поля...</p>:
+                <p>Ивините, произошла ошибка...</p>}
             </div>}
         </div>
     )
