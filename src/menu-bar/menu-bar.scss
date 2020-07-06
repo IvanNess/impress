@@ -31,10 +31,10 @@
         }
     }
     .word{
-        @include word-animation();
+        //@include word-animation();
         &:hover{
             animation: none;
-            fill: greenyellow
+            //fill: greenyellow
         }
     }
 }

@@ -9,22 +9,27 @@ import './menu-panel.scss'
 const panelItems = [
     {
         content: 'Примеры',
+        stringCode: 'examples',
         classNames: ''
     },
     {
         content: 'Услуги',
+        stringCode: 'services',
         classNames: ''
     },
     {
         content: 'Контакт',
+        stringCode: 'contact',
         classNames: ''
     },
     {
         content: 'Просчет',
+        stringCode: 'calc',
         classNames: 'alert'
     },
     {
         content: 'RU',
+        stringCode: 'ru',
         classNames: ''
     },
 ]
@@ -50,6 +55,7 @@ const MenuPanel = ({showPanelItems, setShowPanelItems})=>{
                         key={panelItem.content}
                         content={panelItem.content} 
                         classNames={panelItem.classNames}
+                        stringCode={panelItem.stringCode}
                     />
                 ))}
             </div>

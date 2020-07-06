@@ -1,6 +1,39 @@
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content; 
+    }
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+    @-ms-keyframes #{$name} {
+      @content;
+    }
+    @keyframes #{$name} {
+      @content;
+    } 
+  }
+
+@mixin appear($name, $show-time, $offset) {
+    -webkit-animation: appear-#{$name} $show-time linear both;
+            animation: appear-#{$name} $show-time linear both;
+    @include keyframes(appear-#{$name}){
+        0% {
+          opacity: 0;
+          transform: translateY($offset);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+    }
+}
+
 .service-panel{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    &.show{
+        @include appear(service-panel, 0.4s, 100px);
+    }
 }

@@ -13,17 +13,17 @@ $regularFont: Garamond;
 
 @mixin regular{
     font-family: $regularFont;
-    font-size: 1.4em;
+    font-size: 1.4rem;
 }
 
 @mixin regular-small{
     font-family: $regularFont;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 @mixin main{
     font-family: $mainFont;
-    font-size: 1.1em;
+    font-size: 1.0rem;
     font-weight: bold;
 }
 
@@ -34,21 +34,22 @@ $auxColor: #E4EDF1;
 
 $width: 60em;
 
-p, h1{
+p, h1, h2, h3{
     margin: 0;
     padding: 0;
 }
 
-h1{
-    @include main()
-}
-
 .app-wrapper{
+    color: $primeColor;
+    position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    &.show-calc-app{
+        height: 100vh;
+    }
     .app{
         width: $width;
         .menu-bar{

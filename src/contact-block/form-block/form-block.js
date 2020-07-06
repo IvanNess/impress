@@ -29,7 +29,7 @@ const FormBlock = () => {
 
                         setSubmitting(false)
 
-                        buttonRef.current.focus()
+                        //buttonRef.current.focus()
 
                     }}
                 >

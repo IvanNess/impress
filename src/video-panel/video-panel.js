@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 
 import VideoTile from './video-tile'
@@ -7,8 +7,9 @@ import VideoTypes from './video-types'
 import './video-panel.scss'
 
 const VideoPanel = ({videos, loadMore, filteringVideoType})=>{
+
     return(
-        <div className={`video-panel`}>
+        <div className={`video-panel`} id={`examples`}>
             <VideoTypes/>
             <div className={`video-tiles`}>
                 {videos.map((video, idx)=>{

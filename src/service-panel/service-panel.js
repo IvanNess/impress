@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 
 import ServiceTile from './service-tile'
 
@@ -49,8 +49,18 @@ const services = [
 ]
 
 const ServicePanel = ()=>{
+
+    const [show, setShow] = useState(false)
+    const ref = useRef(null)
+
+    window.addEventListener('scroll', ()=>{
+        if(ref.current && document.documentElement.clientHeight > ref.current.getBoundingClientRect().y){
+            setShow(true)
+        }
+    })
+
     return(
-        <div className={`service-panel`}>
+        <div className={`service-panel ${show? 'show': ''}`} ref={ref}>
             {services.map(service=>{
                 return <ServiceTile
                     key={service.stringCode}

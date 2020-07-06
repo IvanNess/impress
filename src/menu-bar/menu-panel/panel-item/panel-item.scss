@@ -5,25 +5,34 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: $primeColor;
+    &:not(.alert):hover{
+        background-color: $auxColor;
+        box-shadow: 0 0 5px $primeColor;
+    }
     .panel-item{
         //padding: 0 1em;
         font-family: $mainFont;
         cursor: pointer;
-        &:not(.alert)::after{
-            display: block;
-            content: '';
-            border-bottom: solid 3px transparent;
-        }
-        &:not(.alert):hover::after{
-            display: block;
-            content: '';
-            border-bottom: solid 3px red;
-            -webkit-animation: scale-up 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-                    animation: scale-up 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        // &:not(.alert)::after{
+        //     display: block;
+        //     content: '';
+        //     border-bottom: solid 3px transparent;
+        // }
+        // &:not(.alert):hover::after{
+        //     display: block;
+        //     content: '';
+        //     border-bottom: solid 3px red;
+        //     -webkit-animation: scale-up 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        //             animation: scale-up 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        // }
+        &:not(.alert){
+            padding: 0.4rem 0.5rem;
         }
         &.alert{
             background-color: $alertColor;
-            padding: 0.4em 0.5em;
+            padding: 0.4rem 0.5rem;
             border-radius: 3px;
             color: white;
             transition-duration: 0.5s;

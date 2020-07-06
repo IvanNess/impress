@@ -11,10 +11,14 @@ const ServiceTile = ({stringCode, title, description})=>{
                 <img src={image} alt=''/>
             </div>
             <div className={`title`}>
-                {title}
+                <h3>
+                    {title}
+                </h3>
             </div>
             <div className={`description`}>
-                {description}
+                <p>
+                    {description}
+                </p>
             </div>
         </div>
     )

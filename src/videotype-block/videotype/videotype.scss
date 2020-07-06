@@ -21,9 +21,7 @@
         width: 14em;
     }
     .title{
-        font-family: $mainFont;
-        font-weight: bold;
-        font-size: 1.1em;
+        @include main
     }
     .description{
         font-family: $regularFont;
