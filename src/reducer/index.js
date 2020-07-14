@@ -2,6 +2,7 @@ import updateStartVideoIndex from './updateStartVideoIndex'
 import updateFilteringVideoType from './updateFilteringVideoType'
 import updateShowPanelItems from './updateShowPanelItems'
 import updateFilteredVideos from './updateFilteredVideos'
+import updateFingerPrint from './updateFingerPrint'
 
 import updateClicked from '../calc-app/reducer/updateClicked'
 import updateServiceTypes from '../calc-app/reducer/updateServiceTypes'
@@ -49,6 +50,7 @@ const reducer = (state, action) => {
         filteringVideoType: updateFilteringVideoType(state, action),
         showPanelItems: updateShowPanelItems(state, action),
         filteredVideos: updateFilteredVideos(state, action),
+        fingerPrint: updateFingerPrint(state, action),
         calc: {
             showApp: updateShowApp(state, action),
             wannaTypes: updateWannaTypes(state, action),

@@ -111,7 +111,7 @@ const getNewTypes = (state, {type, payload}, typeName)=>{
     }
 }
 
-const onCountClick = (calc, doFetch, showErrors, appClicked, isLoading)=>{
+const onCountClick = (calc, doFetch, showErrors, appClicked, isLoading, fingerPrint)=>{
     if(isLoading){
         return
     }
@@ -134,14 +134,23 @@ const onCountClick = (calc, doFetch, showErrors, appClicked, isLoading)=>{
             return calc.clicked.serviceTypes.includes(service.stringCode) && (service.auxPanel? service.auxPanel!=='': true)
         })
 
+        const email = calc.connectTypes.find(connect=>connect.stringCode==='email')
+        const messengers = calc.connectTypes.find(connect=>connect.stringCode==='messengers')
+
         const data = {
             wannaType: calc.clicked.wannaTypes[0],
+            auxType: calc.clicked.auxTypes[0],
             chrono,
             languageTypes: calc.clicked.languageTypes,
             budgetTypes,
             services,
-            contact: calc.connectTypes
+            contact: {email: email.value, messengers:messengers.value},
+            token: localStorage.getItem('token'),
+            fingerPrint,
+            date: new Date()
         }
+
+        console.log('SENDING DATA', data)
         doFetch(data)
     } else{
         console.log('open window')

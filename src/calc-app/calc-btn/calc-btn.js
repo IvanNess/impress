@@ -9,7 +9,7 @@ import './calc-btn.scss'
 //const url = 'https://sleepy-chamber-55762.herokuapp.com/'
 const url = process.env.REACT_APP_SERVER_URI
 
-const CalcButton = ({calc, setLoading, setFetchData, setFetchError, openWindow, appClicked, showErrors})=>{
+const CalcButton = ({calc, setLoading, setFetchData, setFetchError, openWindow, appClicked, showErrors, fingerPrint})=>{
 
     const [{error, isLoading, data}, doFetch] = useFetch(url)
 
@@ -35,7 +35,7 @@ const CalcButton = ({calc, setLoading, setFetchData, setFetchError, openWindow, 
                 className={`btn ${loading}`} 
                 onClick={(e)=>{
                     console.log('URI', url, process)
-                    const res = onCountClick(calc, doFetch, showErrors, appClicked, isLoading)
+                    const res = onCountClick(calc, doFetch, showErrors, appClicked, isLoading, fingerPrint)
                     if(res==='error'){
                         setFetchError('red_squares')
                     }
@@ -48,7 +48,8 @@ const CalcButton = ({calc, setLoading, setFetchData, setFetchError, openWindow, 
 }
 
 const mapStateToProps =(state)=>({
-    calc: state.calc
+    calc: state.calc,
+    fingerPrint: state.fingerPrint
 })
 
 const mapDispatchToProps=({

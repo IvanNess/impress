@@ -19,6 +19,7 @@ const useFetch = url =>{
             const response = await axios(url, {
                 method: 'post',
                 data,
+                withCredentials: true
             })
             console.log(response)
             setResponse({error: false, isLoading: false, data: response.data})
