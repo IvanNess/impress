@@ -19,6 +19,7 @@ const VideoPanel = ({videos, loadMore, filteringVideoType})=>{
                             stringCode={video? video.stringCode: 'none'}
                             type={video && video.type}
                             filteringVideoType={filteringVideoType}
+                            src={video && video.src}
                         />
                     )
                 })}

@@ -1,33 +1,37 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 
-import image from'../../images/all.jpg'
+import image from '../../images/all.jpg'
 
 import './video-tile.scss'
 
-const VideoTile = ({stringCode, type, filteringVideoType})=>{
+const VideoTile = ({ stringCode, type, filteringVideoType }) => {
     const [slitIn, setSlitIn] = useState(false)
 
     const videoTileClassNames = classNames({
-        "video-tile": true, 
+        "video-tile": true,
         [stringCode]: true,
         'slit-in-vertical': slitIn
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log(stringCode, filteringVideoType)
         setSlitIn(true)
-        setTimeout(()=>{
+        setTimeout(() => {
             setSlitIn(false)
-        },500)
+        }, 500)
     }, [stringCode, filteringVideoType])
 
-    return(
-        <div className={`${videoTileClassNames}`}>
-            <div className={`image-wrapper ${stringCode}`}>
-                <img src={image} alt=''/>
+    return (
+        <NavLink className={`video-link`} to={`/impress/video/${stringCode}`}>
+            <div className={`${videoTileClassNames}`}>
+                <div className={`image-wrapper ${stringCode}`}>
+                    <img src={image} alt='' />
+                </div>
             </div>
-        </div>
+
+        </NavLink>
     )
 }
 

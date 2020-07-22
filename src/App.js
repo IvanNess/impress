@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import jwt from 'jsonwebtoken'
 
 import store from './store'
+
 import MenuBar from './menu-bar'
 import WelcomeBlock from './welcome-block'
 import VideotypeBlock from './videotype-block'
@@ -14,7 +15,8 @@ import ContactBlock from './contact-block'
 import Footer from './footer'
 import ColorBar from './color-bar'
 import Calc from './calc-app'
-import Stat from './stat';
+import Stat from './stat'
+import FullVideo from './full-video'
 
 import { getFingerprint } from './utils'
 import useFetch from './calc-app/hooks/useFetch'
@@ -25,10 +27,14 @@ import AppWrapper from './app-wrapper'
 const Full = ({ match }) => {
 
   const appearance = match && match.params.param === 'calc' ? true : false
+  const fullVideo = match && match.path === '/impress/video/:param' ? true : false
+
+  console.log('match', match)
 
   return (
     <Fragment>
       <Calc appearance={appearance} />
+      {fullVideo && <FullVideo enabled={fullVideo} stringCode={match.params.param}/>}
       <AppWrapper>
         <div className={`app`}>
           <MenuBar />
@@ -86,6 +92,7 @@ const App = () => {
         <Switch>
           <Route path='/impress/' exact component={Full} />
           <Route path='/impress/stat' exact component={Stat} />
+          <Route path='/impress/video/:param' component={Full} />
           <Route path='/impress/:param' component={Full} />
         </Switch>
       </Router>

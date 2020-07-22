@@ -3,6 +3,27 @@
 $image-width: 300px;
 $image-height: 168px;
 
+.video-link{
+    margin-bottom: 2em;
+    &:hover{
+        .video-tile{
+            &:not(.none)::after{
+                cursor: pointer;
+                display: block;
+                content:'';
+                position: absolute;
+                width: 100%;
+                height: $image-height;
+                background-color: rgba(1, 1, 1, 0.3);
+                transform: translate(0%, -100%);
+            }
+            &:not(.none){
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
 .video-tile{
     .image-wrapper{
         @include image-scale-with-classname(kitty, 300px, 168px, 868px, 1017px, 0.8, 189px, 487px);
@@ -26,19 +47,6 @@ $image-height: 168px;
             opacity: 0;
         }     
     }
-    &:not(.none):hover::after{
-        cursor: pointer;
-        display: block;
-        content:'';
-        width: 100%;
-        height: 100%;
-        background-color: rgba(1, 1, 1, 0.3);
-        transform: translate(0%, -100%);
-    }
-    &:not(.none):hover{
-        transform: scale(1.05);
-    }
-    padding-bottom: 2em;
     &.slit-in-vertical{
         -webkit-animation: slit-in-vertical 0.45s ease-out both;
                 animation: slit-in-vertical 0.45s ease-out both;

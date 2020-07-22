@@ -4,57 +4,68 @@ const videos = [
     {
         id: '0',
         type: ['explainer', 'advideo'],
-        stringCode: 'kitty'
+        stringCode: 'kitty',
+        src: 'https://www.youtube.com/embed/eVzVDzfDLjc?rel=0&autoplay=1'
     },
     {
         id: '1',
         type: ['learning', 'advideo'],
-        stringCode: 'consult'
+        stringCode: 'consult',
+        src: "https://www.youtube.com/embed/x3WqrV4D07M?rel=0&autoplay=1"
     },
     {
         id: '2',
         type: ['explainer', 'learnig'],
-        stringCode: 'law'
+        stringCode: 'law',
+        src: 'https://www.youtube.com/embed/YaBS444DuGo?rel=0&autoplay=1'
     },
     {
         id: '3',
         type: ['advideo'],
-        stringCode: 'island'
+        stringCode: 'island',
+        src: "https://www.youtube.com/embed/2tF-BIUEKtw?rel=0&autoplay=1"
     },
     {
         id: '4',
         type: ['learning', 'advideo'],
-        stringCode: 'beard'
+        stringCode: 'beard',
+        src: "https://www.youtube.com/embed/2tF-BIUEKtw?rel=0&autoplay=1"
     },
     {
         id: '5',
         type: ['explainer', 'advideo'],
-        stringCode: 'pour'
+        stringCode: 'pour',
+        src: 'https://www.youtube.com/embed/1mc7tQBOx3Y?rel=0&autoplay=1'
     },
     {
         id: '6',
         type: ['explainer', 'advideo'],
-        stringCode: 'kitty1'
+        stringCode: 'kitty1',
+        src: 'https://www.youtube.com/embed/eVzVDzfDLjc?rel=0&autoplay=1'
     },
     {
         id: '7',
         type: ['learning', 'advideo'],
-        stringCode: 'consult1'
+        stringCode: 'consult1',
+        src: "https://www.youtube.com/embed/x3WqrV4D07M?rel=0&autoplay=1"
     },
     {
         id: '8',
         type: ['explainer', 'learnig'],
-        stringCode: 'law1'
+        stringCode: 'law1',
+        src: 'https://www.youtube.com/embed/YaBS444DuGo?rel=0&autoplay=1'
     },
     {
         id: '9',
         type: ['advideo'],
-        stringCode: 'island1'
+        stringCode: 'island1',
+        src: "https://www.youtube.com/embed/2tF-BIUEKtw?rel=0&autoplay=1"
     },
     {
         id: '10',
         type: ['learning', 'advideo'],
-        stringCode: 'beard1'
+        stringCode: 'beard1',
+        src: "https://www.youtube.com/embed/2tF-BIUEKtw?rel=0&autoplay=1"
     },
     // {
     //     id: '11',
