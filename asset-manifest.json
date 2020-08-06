@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/impress/static/css/main.fda48b87.chunk.css",
-    "main.js": "/impress/static/js/main.9acc5443.chunk.js",
-    "main.js.map": "/impress/static/js/main.9acc5443.chunk.js.map",
+    "main.css": "/impress/static/css/main.0db19cc3.chunk.css",
+    "main.js": "/impress/static/js/main.734e7491.chunk.js",
+    "main.js.map": "/impress/static/js/main.734e7491.chunk.js.map",
     "runtime-main.js": "/impress/static/js/runtime-main.182fd135.js",
     "runtime-main.js.map": "/impress/static/js/runtime-main.182fd135.js.map",
-    "static/js/2.cce6612a.chunk.js": "/impress/static/js/2.cce6612a.chunk.js",
-    "static/js/2.cce6612a.chunk.js.map": "/impress/static/js/2.cce6612a.chunk.js.map",
+    "static/js/2.98284321.chunk.js": "/impress/static/js/2.98284321.chunk.js",
+    "static/js/2.98284321.chunk.js.map": "/impress/static/js/2.98284321.chunk.js.map",
     "index.html": "/impress/index.html",
-    "precache-manifest.dd991bc371a4162eff706ae2f4336cc6.js": "/impress/precache-manifest.dd991bc371a4162eff706ae2f4336cc6.js",
+    "precache-manifest.520d1269d3b86a1a68712dda1bf653b2.js": "/impress/precache-manifest.520d1269d3b86a1a68712dda1bf653b2.js",
     "service-worker.js": "/impress/service-worker.js",
-    "static/css/main.fda48b87.chunk.css.map": "/impress/static/css/main.fda48b87.chunk.css.map",
-    "static/js/2.cce6612a.chunk.js.LICENSE.txt": "/impress/static/js/2.cce6612a.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/impress/static/media/Roboto-Regular.11eabca2.ttf",
-    "static/media/all.jpg": "/impress/static/media/all.9574c6cf.jpg",
+    "static/css/main.0db19cc3.chunk.css.map": "/impress/static/css/main.0db19cc3.chunk.css.map",
+    "static/js/2.98284321.chunk.js.LICENSE.txt": "/impress/static/js/2.98284321.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/impress/static/media/Rubik-Regular.b3d0902b.ttf",
+    "static/media/Icons.jpg": "/impress/static/media/Icons.a08762ed.jpg",
     "static/media/placeholder.jpg": "/impress/static/media/placeholder.42f60add.jpg",
+    "static/media/play.svg": "/impress/static/media/play.ebcc098a.svg",
+    "static/media/spriteVideos.jpg": "/impress/static/media/spriteVideos.437d7b0d.jpg",
     "static/media/videomini.mp4": "/impress/static/media/videomini.0e38459d.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.182fd135.js",
-    "static/js/2.cce6612a.chunk.js",
-    "static/css/main.fda48b87.chunk.css",
-    "static/js/main.9acc5443.chunk.js"
+    "static/js/2.98284321.chunk.js",
+    "static/css/main.0db19cc3.chunk.css",
+    "static/js/main.734e7491.chunk.js"
   ]
 }
