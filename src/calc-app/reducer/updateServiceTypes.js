@@ -296,7 +296,7 @@ const updateServiceTypes = (state, {type, payload})=>{
             {
                 name: 'Графика',
                 stringCode: 'graph',
-                auxTypes: ['animation', 'screen', 'play'],
+                auxTypes: ['screen', 'play'],
                 error: false,
                 auxPanel: {
                     params: ['sec',],

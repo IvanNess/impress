@@ -1,4 +1,16 @@
 @import '../App.scss'; 
+@import '../keyframes.scss';
+
+@include keyframes(head-block-opacity) {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .head-block{
     margin-top: 6rem;
@@ -6,14 +18,20 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    &.appeared{
+        animation: head-block-opacity 1s linear;
+    }
     &.services{
         padding-bottom: 4rem;
     }
+    &.examples{
+        padding-bottom: 3rem;
+    }
     .flex-wrapper{
-        display: flex;
+        display: flex; 
         flex-direction: column;
         align-items: center;
-        width: 38rem;
+        width: 38rem; 
         .headline{
             padding-bottom: 0.5rem;
             font-family: $mainFont;

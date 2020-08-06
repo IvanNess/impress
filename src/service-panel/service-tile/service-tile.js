@@ -1,15 +1,15 @@
 import React from 'react'
 
-import image from '../../images/all.jpg'
+//import image from '../../images/all.jpg'
 
 import './service-tile.scss'
 
 const ServiceTile = ({stringCode, title, description})=>{
     return(
         <div className={`service-tile`}>
-            <div className={`image-wrapper ${stringCode}`}>
+            {/* <div className={`image-wrapper ${stringCode}`}>
                 <img src={image} alt=''/>
-            </div>
+            </div> */}
             <div className={`title`}>
                 <h3>
                     {title}

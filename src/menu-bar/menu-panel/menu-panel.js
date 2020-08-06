@@ -23,7 +23,7 @@ const panelItems = [
         classNames: ''
     },
     {
-        content: 'Просчет',
+        content: 'Расчет',
         stringCode: 'calc',
         classNames: 'alert'
     },

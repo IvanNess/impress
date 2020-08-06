@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'Roboto';
-    src: url(Roboto-Regular.ttf);
+    src: url(fonts/Roboto-Medium.ttf);
 }
 
 @font-face{
@@ -8,7 +8,22 @@
     src: url(EBGaramond-Regular.ttf);
 }
 
-$mainFont: Roboto;
+@font-face{
+    font-family: 'Roboto Mono';
+    src: url(fonts/RobotoMono-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'Rubic';
+    src: url(fonts/Rubik-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'Manrope';
+    src: url(fonts/Manrope-ExtraBold.ttf);
+}
+
+$mainFont: 'Manrope';
 $regularFont: Garamond;
 
 @mixin regular{
@@ -30,9 +45,10 @@ $regularFont: Garamond;
 $alertColor: #FF2A00;
 $regularColor: #C9EC23;
 $primeColor: #00171F;
+$my-prime-color: rgba(0, 0, 0, 0.8);
 $auxColor: #E4EDF1;
 
-$width: 60em;
+$width: 60rem;
 
 p, h1, h2, h3{
     margin: 0;
@@ -40,7 +56,7 @@ p, h1, h2, h3{
 }
 
 .app-wrapper{
-    color: $primeColor;
+    color: $my-prime-color;
     position: relative;
     overflow: hidden;
     display: flex;

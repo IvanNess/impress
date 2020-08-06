@@ -1,11 +1,26 @@
 @import '../../App.scss';
 @import '../../utils.scss';
+@import '../../keyframes.scss';
+
+@include keyframes(all-contacts-animation) {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 .all-contacts{
     height: 21.4em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    &.appeared{
+        animation: all-contacts-animation 1s linear;
+    }
     .title{
         @include regular;
     }
@@ -16,18 +31,24 @@
         flex-direction: row;
         justify-content: flex-start;
     }
+    .messengers-block{
+        .msgrs-icons{
+            display: flex;
+            flex-direction: row;
+        }
+    }
     .image-wrapper{
-        @include image-scale-with-classname(a1, 30px, 30px, 868px, 1017px, 0.8, 400px, 825px);
-        @include image-scale-with-classname(wattsapp, 30px, 30px, 868px, 1017px, 0.8, 440px, 825px);
-        @include image-scale-with-classname(viber, 30px, 30px, 868px, 1017px, 0.8, 483px, 825px);
-        @include image-scale-with-classname(telegram, 30px, 30px, 868px, 1017px, 0.8, 525px, 825px);
+        @include image-scale-with-classname(a1, 30px, 30px, 600px, 150px, 0.2, 75px, 75px);
+        @include image-scale-with-classname(wattsapp, 30px, 30px, 600px, 150px, 0.2, 225px, 75px);
+        @include image-scale-with-classname(viber, 30px, 30px, 600px, 150px, 0.2, 375px, 75px);
+        @include image-scale-with-classname(telegram, 30px, 30px, 600px, 150px, 0.2, 525px, 75px);
         @include image-scale-with-classname(instagram, 35px, 35px, 868px, 1017px, 0.8, 568px, 827px);
         @include image-scale-with-classname(facebook, 35px, 35px, 868px, 1017px, 0.8, 612px, 827px);
         @include image-scale-with-classname(vk, 35px, 35px, 868px, 1017px, 0.8, 654px, 827px);
         @include image-scale-with-classname(youtube, 35px, 35px, 868px, 1017px, 0.8, 698px, 827px);
-        &:hover{
-            cursor: pointer;
-        }
+        // &:hover{
+        //     cursor: pointer;
+        // }
     }
 
 }

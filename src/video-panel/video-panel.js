@@ -1,48 +1,52 @@
-import React, {useEffect} from 'react'
-import {connect} from 'react-redux'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 
 import VideoTile from './video-tile'
 import VideoTypes from './video-types'
 
 import './video-panel.scss'
 
-const VideoPanel = ({videos, loadMore, filteringVideoType})=>{
+const VideoPanel = ({ videos, loadMore, filteringVideoType }) => {
 
-    return(
+    console.log('videos', videos)
+
+    return (
         <div className={`video-panel`} id={`examples`}>
-            <VideoTypes/>
+            <VideoTypes />
             <div className={`video-tiles`}>
-                {videos.map((video, idx)=>{
-                    return(
-                        <VideoTile 
-                            key={idx}
-                            stringCode={video? video.stringCode: 'none'}
-                            type={video && video.type}
-                            filteringVideoType={filteringVideoType}
-                            src={video && video.src}
-                        />
+                {videos.map((video, idx) => {
+                    return (
+                        <React.Fragment>
+                            {video && <VideoTile
+                                key={idx}
+                                stringCode={video ? video.stringCode : 'none'}
+                                type={video && video.type}
+                                filteringVideoType={filteringVideoType}
+                                src={video && video.src}
+                            />}
+                        </React.Fragment>
                     )
                 })}
             </div>
             <div className='load-wrapper'>
-                <div 
+                {!videos.includes(null) && <div
                     className={`load ${videos.includes(undefined) && 'none'}`}
-                    onClick={()=>loadMore()}
+                    onClick={() => loadMore()}
                 >
                     Еще видео >
-                </div>
+                </div>}
             </div>
         </div>
     )
 }
 
-const mapStateToProps = state=>({
+const mapStateToProps = state => ({
     videos: state.filteredVideos,
     filteringVideoType: state.filteringVideoType
 })
 
 const mapDispatchToProps = ({
-    loadMore: ()=>({type: 'LOAD_MORE_VIDEOS'})
+    loadMore: () => ({ type: 'LOAD_MORE_VIDEOS' })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoPanel)

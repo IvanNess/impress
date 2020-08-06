@@ -1,5 +1,17 @@
 @import '../utils.scss';
 @import '../App.scss';
+@import '../keyframes.scss';
+
+@include keyframes(logo-wrapper-animation) {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @mixin word-animation {
     animation: word-animation 4.8s linear infinite;
@@ -26,6 +38,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        animation: logo-wrapper-animation 1s linear;
         &:hover{
             cursor: pointer;
         }

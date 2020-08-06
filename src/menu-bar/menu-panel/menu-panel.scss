@@ -1,9 +1,23 @@
+@import '../../keyframes.scss';
+
 $transitiionPoint: 40em;
+
+@include keyframes(menu-panel-animation) {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 .menu-panel{
     display: flex;
     align-items: center;
     position: relative;
+    animation: menu-panel-animation 1s linear;
     .shortcut{
         display: none;
         @media only all and (max-width: $transitiionPoint){
@@ -25,7 +39,7 @@ $transitiionPoint: 40em;
                 text-align: center;
             }
         }
-        width: 23em;
+        width: 25rem;
         display: flex;
         justify-content: space-between;
     }

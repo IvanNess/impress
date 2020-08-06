@@ -1,5 +1,6 @@
 @import '../utils';
 @import '../App.scss';
+@import '../keyframes.scss';
 
 @mixin up-down($name, $start, $end, $duration,  $delay) {
     animation: up-down-#{$name} $duration linear $delay infinite;
@@ -36,6 +37,17 @@
     }
 }
 
+@include keyframes(welcome-text-animation) {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .welcome-block{
     padding-top: 4em;
     display: flex;
@@ -44,21 +56,27 @@
     font-family: $regularFont;
     font-size: 1.4em;
     .welcome-text{
-        width: 22rem;
+        width: 25rem; //22rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        animation: welcome-text-animation 1s linear;
         .welcome-headline{
             font-family: $mainFont;
             font-size: 1.0rem;
             font-weight: bold;
+            line-height: 2.3rem;
         }
         .welcome-order{
-            color: #FF2A00;
-            &:hover{
-                cursor: pointer;
+            a{
+                color: #FF2A00;
+                text-decoration: none;
             }
+            
         }
+        // .welcome-description{
+        //     line-height: 2.2rem;
+        // }
     }
     .media-wrapper{ 
         display: flex;

@@ -12,12 +12,12 @@ const VideoCalc = ({wannaTypes, languageTypes, auxTypes, budgetTypes, serviceTyp
 
     return(
         <div className={`video-calc`}>
-            <VideoTypes question={`Какой ролик Вы хотите сделать?`} types={wannaTypes} typePanel={`wannaTypes`}/>
-            <VideoTypes question={`Выберите тип видео.`} types={auxTypes} typePanel={`auxTypes`}/>
+            <VideoTypes question={`Какой ролик хотите сделать?`} types={wannaTypes} typePanel={`wannaTypes`}/>
+            <VideoTypes question={`Выберите тип видео:`} types={auxTypes} typePanel={`auxTypes`}/>
             <VideoTypes question={`Какой хронометраж?`} types={serviceTypes} typePanel={`chrono`}/>
             <VideoTypes question={`На каком языке?`} types={languageTypes} typePanel={`languageTypes`}/>
             <VideoTypes question={`Ожидаемый бюджет:`} types={budgetTypes} typePanel={`budgetTypes`}/>
-            <VideoTypes question={`Отметьте услуги, которые Вам понадобятся? Не отмечайте услуги, которые планируете взять на себя.`}
+            <VideoTypes question={`Выберите услуги, которые Вам понадобятся (не нужно отмечать те, которые планируете взять на себя).`}
                 types={serviceTypes} typePanel={`serviceTypes`} show={serviceTypesShow} 
                 prevAuxType={prevAuxType} clickedAuxTypes={clicked.auxTypes} prevLanguageType={prevLanguageType} clickedLanguageTypes={clicked.languageTypes}/>
             <ConnectTypes question={`Контактная информация`} types={connectTypes}/>

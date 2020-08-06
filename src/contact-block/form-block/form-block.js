@@ -1,14 +1,26 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+
+import {isInTheView} from '../../utils'
 
 import './form-block.scss'
 
 const FormBlock = () => {
     const buttonRef = useRef(null)
 
+    const [appeared, setAppeared] = useState(false)
+
+    const ref = useRef(null)
+
+    window.addEventListener('scroll', () => {
+        if (isInTheView(ref)) {
+            setAppeared(true)
+        }
+    })
+
     return (
         <div className={`form-block`}>
-            <div className={`form-wrapper`}>
+            <div className={`form-wrapper ${appeared && 'appeared'}`} ref={ref}>
                 <Formik
                     initialValues={{ name: '', contact: '', description: '' }}
                     validateOnChange={false}
@@ -38,7 +50,7 @@ const FormBlock = () => {
                             <div className={`field`}>Имя</div>
                             <Field type="text" name="name" />
                             <div className='name-with-error'>
-                                <div className={`field`}>Как с Вами связаться?</div>
+                                <div className={`field`}>Как с Вами связаться? Укажите e-mail, телефон или мессенджер</div>
                                 <ErrorMessage name="contact" component="div" className='error' />
                             </div>
                             <Field type="text" name="contact" />

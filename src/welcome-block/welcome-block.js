@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import lozad from 'lozad'
 
 import image from '../images/placeholder.jpg'
@@ -8,17 +9,17 @@ import './welcome-block.scss'
 
 const WelcomeBlock = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         const observer = lozad() // lazy loads elements with default selector as '.lozad'
         observer.observe()
     }, [])
 
-    const [topAnimation, setTopAnimation] = useState(false)
-    const [bottomAnimation, setBottomAnimation] = useState(false)
-    const [leftAnimation, setLeftAnimation] = useState(false)
-    const [rightAnimation, setRightAnimation] = useState(false)
+    // const [topAnimation, setTopAnimation] = useState(false)
+    // const [bottomAnimation, setBottomAnimation] = useState(false)
+    // const [leftAnimation, setLeftAnimation] = useState(false)
+    // const [rightAnimation, setRightAnimation] = useState(false)
 
-    const [first, setFirst] = useState(false)
+    // const [first, setFirst] = useState(false)
 
     // useEffect(()=>{
 
@@ -76,22 +77,26 @@ const WelcomeBlock = () => {
             <div className={`welcome-text`}>
                 <div className={`welcome-headline`}>
                     <h1>
-                        Тот самый видео продакшн, который Вы искали
+                        Тот самый видео-продакшн и студия видеомаркетинга
                     </h1>
 
                 </div>
                 <div className={`welcome-description`}>
                     <p>
-                        Создаем современные видео для любых Ваших задач:
-                        привлечение и удержание клиентов, повышение лояльности,
-                        обучение и техподдержка, продажи, улучшение имиджа.
+                        Создаем современные видео для любых
+                        Ваших задач: привлечение и удержание
+                        клиентов, обучение и техподдержка,
+                        продажи, увеличение узнаваемости,
+                        развитие статуса эксперта и др.
                     </p>
 
                 </div>
                 <div className={`welcome-order`}>
-                    <p>
-                        Заказать видео >
-                    </p>
+                    <Link to='/impress/#contact'>
+                        <p>
+                            Заказать видео >
+                        </p>
+                    </Link>
 
                 </div>
             </div>
@@ -108,10 +113,10 @@ const WelcomeBlock = () => {
             </div> */}
 
             <div className={`media-wrapper`}>
-                <video 
+                <video
                     data-poster={image}
                     className="lozad"
-                    autoPlay muted loop playsInline 
+                    autoPlay muted loop playsInline
                     width="512" height="304"
                 >
                     <source data-src={video} type="video/mp4" />

@@ -1,8 +1,23 @@
 @import '../../App.scss';
+@import '../../keyframes.scss';
+
+@include keyframes(form-animation) {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 .form-block{
     width: 65%;
     .form-wrapper{
+        &.appeared{
+            animation: form-animation 1s linear;
+        }
         form{
             display: flex;
             flex-direction: column;
@@ -21,10 +36,11 @@
                 resize: none;
             }
             button{
+                font-size: 1rem;
                 background-color: $alertColor;
                 padding: 0.5em;
                 width: 7em;
-                border-radius: 5px;
+                border-radius: 3px;
                 color: white;
                 border: none;
                 transition-duration: 0.5s;
@@ -42,11 +58,15 @@
             }
             .name-with-error{
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-between;
                 .error{
                     color: $alertColor;
+                    padding-bottom: 0.5rem;
                 }
+            }
+            .field{
+                padding-bottom: 0.5rem;
             }
         }
     }   

@@ -1,36 +1,49 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
+
+import {isInTheView} from '../utils'
 
 import './color-bar.scss'
 
 const ColorBar = ()=>{
-return(
-    <div className={`color-bar`}>
-        <div className={`bar alert-color`}></div>
-        <div className={`bar prime-color`}></div>
-        <div className={`bar aux-color`}></div>
-        <div className={`bar regular-color`}></div>
 
-        <div className={`bar alert-color`}></div>
-        <div className={`bar prime-color`}></div>
-        <div className={`bar aux-color`}></div>
-        <div className={`bar regular-color`}></div>
+    const ref = useRef(null)
 
-        <div className={`bar alert-color`}></div>
-        <div className={`bar prime-color`}></div>
-        <div className={`bar aux-color`}></div>
-        <div className={`bar regular-color`}></div>
+    const [appeared, setAppeared] = useState(false)
 
-        <div className={`bar alert-color`}></div>
-        <div className={`bar prime-color`}></div>
-        <div className={`bar aux-color`}></div>
-        <div className={`bar regular-color`}></div>
+    window.addEventListener('scroll', () => {
+        if (isInTheView(ref)) {
+            setAppeared(true)
+        }
+    })
 
-        <div className={`bar alert-color`}></div>
-        <div className={`bar prime-color`}></div>
-        <div className={`bar aux-color`}></div>
-        <div className={`bar regular-color`}></div>
-    </div>
-)
+    return(
+        <div className={`color-bar ${appeared? 'appeared': ''}`} ref={ref}>
+            <div className={`bar alert-color`}></div>
+            <div className={`bar prime-color`}></div>
+            <div className={`bar aux-color`}></div>
+            <div className={`bar regular-color`}></div>
+
+            <div className={`bar alert-color`}></div>
+            <div className={`bar prime-color`}></div>
+            <div className={`bar aux-color`}></div>
+            <div className={`bar regular-color`}></div>
+
+            <div className={`bar alert-color`}></div>
+            <div className={`bar prime-color`}></div>
+            <div className={`bar aux-color`}></div>
+            <div className={`bar regular-color`}></div>
+
+            <div className={`bar alert-color`}></div>
+            <div className={`bar prime-color`}></div>
+            <div className={`bar aux-color`}></div>
+            <div className={`bar regular-color`}></div>
+
+            <div className={`bar alert-color`}></div>
+            <div className={`bar prime-color`}></div>
+            <div className={`bar aux-color`}></div>
+            <div className={`bar regular-color`}></div>
+        </div>
+    )
 }
 
 export default ColorBar

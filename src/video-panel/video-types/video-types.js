@@ -12,14 +12,14 @@ const types = [
         name: 'explainer',
         content: 'Explainer' 
     },    
-    {
-        name: 'learning',
-        content: 'Обучающие' 
-    },    
-    {
-        name: 'advideo',
-        content: 'Рекламные' 
-    }
+    // {
+    //     name: 'learning',
+    //     content: 'Обучающие' 
+    // },    
+    // {
+    //     name: 'advideo',
+    //     content: 'Рекламные' 
+    // }
 ]
 
 const VideoTypes = ({setFilteringVideoType, filteringVideoType})=>{

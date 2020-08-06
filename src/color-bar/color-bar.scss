@@ -1,35 +1,51 @@
 @import '../App.scss';
+@import '../keyframes.scss';
 
 $barWidth: 10em;
 
+@include keyframes(bar-animation) {
+    0% {
+        transform: translateX(-80px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .color-bar{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     flex-wrap: nowrap;
     height: 0.5em;
     .bar{ 
         width: $barWidth;
-        animation: move 5.0s linear infinite;
+        //animation: move 5.0s infinite;
         &.alert-color{
             background-color: $alertColor;
-        }
+        } 
         &.prime-color{
             background-color: $primeColor; 
         }
         &.aux-color{
             background-color: $auxColor;
         }
-        &.regular-color{
+        &.regular-color{ 
             background-color: $regularColor;
+        }
+    }
+    &.appeared{
+        .bar{
+            //animation: move 0.8s ease-out; 
+            animation: bar-animation 0.5s linear;
         }
     }
 }
 
-@keyframes move{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(4 * $barWidth);
-    }
-}
+// @keyframes move{
+//     0%{
+//         transform: translateX(0);
+//     }
+//     100%{
+//         transform: translateX(4 * $barWidth);
+//     }
+// }

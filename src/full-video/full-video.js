@@ -40,7 +40,7 @@ const FullVideo = ({enabled, stringCode})=>{
     return(
         <div className={`full-video-wrapper`} ref={wrapperRef}>
             <div className={`full-video`} ref={videoRef}>
-                <iframe src={src} ></iframe>
+                <iframe src={src} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </div>
         </div>
     )

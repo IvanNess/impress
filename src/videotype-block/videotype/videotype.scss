@@ -1,6 +1,10 @@
 @import '../../utils.scss';
 @import '../../App.scss';
 
+@mixin jello{
+    
+}
+
 .videotype{
     width: 15em;
     padding: 2em;
@@ -10,15 +14,21 @@
     align-items: center;
     text-align: center;
     .image-wrapper{
-        @include image-scale-with-classname(explainer, 45px, 45px, 868px, 1017px, 0.8, 30px, 135px);
-        @include image-scale-with-classname(learning, 45px, 45px, 868px, 1017px, 0.8, 90px, 132px);
-        @include image-scale-with-classname(presentation, 45px, 45px, 868px, 1017px, 0.8, 150px, 135px);
-        @include image-scale-with-classname(advideo, 45px, 45px, 868px, 1017px, 0.8, 30px, 195px);
-        @include image-scale-with-classname(videoblog, 45px, 45px, 868px, 1017px, 0.8, 90px, 195px);
-        @include image-scale-with-classname(videocontent, 45px, 45px, 868px, 1017px, 0.8, 145px, 190px);
+        // @include image-scale-with-classname(explainer, 45px, 45px, 868px, 1017px, 0.8, 30px, 135px);
+        // @include image-scale-with-classname(learning, 45px, 45px, 868px, 1017px, 0.8, 90px, 132px);
+        // @include image-scale-with-classname(presentation, 45px, 45px, 868px, 1017px, 0.8, 150px, 135px);
+        // @include image-scale-with-classname(advideo, 45px, 45px, 868px, 1017px, 0.8, 30px, 195px);
+        // @include image-scale-with-classname(videoblog, 45px, 45px, 868px, 1017px, 0.8, 90px, 195px);
+        // @include image-scale-with-classname(videocontent, 45px, 45px, 868px, 1017px, 0.8, 145px, 190px);
+        &.jello.appear {
+            -webkit-animation: jello 0.9s both;
+                    animation: jello 0.9s both;
+        }
     }
     &.learning{
-        width: 14em;
+        .description{
+            width: 10rem;
+        }
     }
     .title{
         @include main
@@ -28,3 +38,64 @@
         font-size: 1.1em;
     }
 }
+
+@-webkit-keyframes jello {
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    }
+    30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes jello {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+              transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+  }

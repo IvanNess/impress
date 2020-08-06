@@ -1,18 +1,31 @@
-import React from 'react'
+import React, {useState, useRef} from 'react'
 
-import image from '../../images/all.jpg'
+import {isInTheView} from '../../utils'
+
+import image from '../../images/Icons.jpg'
 
 import './all-contacts.scss'
 
 const AllContacts = () => {
+
+    const [appeared, setAppeared] = useState(false)
+
+    const ref = useRef(null)
+
+    window.addEventListener('scroll', () => {
+        if (isInTheView(ref)) {
+            setAppeared(true)
+        }
+    })
+
     return (
-        <div className={`all-contacts`}>
+        <div className={`all-contacts ${appeared && 'appeared'}`} ref={ref}>
             <div className={`email-block`}>
                 <div className={`title`}>
                     Email:
                 </div>
                 <div className={`content`}>
-                    impressstudio@gmail.com
+                    impressstudioby@gmail.com
                 </div>
             </div>
 
@@ -22,6 +35,8 @@ const AllContacts = () => {
                 </div>
                 <div className={`content`}>
                     +375 44 725-64-19
+                </div>
+                <div className={`msgrs-icons`}>
                     <div className={`image-wrapper a1`}>
                         <img src={image} alt='' />
                     </div>
@@ -46,7 +61,7 @@ const AllContacts = () => {
                 </div>
             </div>
 
-            <div className={`sociall-block`}>
+            {/* <div className={`sociall-block`}>
                 <div className={`title`}>
                     Социальные сети:
                 </div>
@@ -64,7 +79,7 @@ const AllContacts = () => {
                         <img src={image} alt='' />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
