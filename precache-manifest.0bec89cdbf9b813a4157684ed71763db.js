@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2af2085b0f533fc41cad658b6019d89a",
+    "revision": "4794c254fe1e69f971a5c6cd40a9527e",
     "url": "/impress/index.html"
   },
   {
-    "revision": "665fbe26f7f88ecd2220",
-    "url": "/impress/static/css/main.894c6e4a.chunk.css"
+    "revision": "6651d59572289a3d1a37",
+    "url": "/impress/static/css/main.f0fa1e65.chunk.css"
   },
   {
     "revision": "42b9b7205788807a55b5",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/impress/static/js/2.528cde6f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "665fbe26f7f88ecd2220",
+    "revision": "6651d59572289a3d1a37",
     "url": "/impress/static/js/main.6342cdd3.chunk.js"
   },
   {

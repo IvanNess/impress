@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/impress/static/css/main.894c6e4a.chunk.css",
+    "main.css": "/impress/static/css/main.f0fa1e65.chunk.css",
     "main.js": "/impress/static/js/main.6342cdd3.chunk.js",
     "main.js.map": "/impress/static/js/main.6342cdd3.chunk.js.map",
     "runtime-main.js": "/impress/static/js/runtime-main.182fd135.js",
@@ -8,9 +8,9 @@
     "static/js/2.528cde6f.chunk.js": "/impress/static/js/2.528cde6f.chunk.js",
     "static/js/2.528cde6f.chunk.js.map": "/impress/static/js/2.528cde6f.chunk.js.map",
     "index.html": "/impress/index.html",
-    "precache-manifest.337c1a49c5550a0ce3077b962d204902.js": "/impress/precache-manifest.337c1a49c5550a0ce3077b962d204902.js",
+    "precache-manifest.0bec89cdbf9b813a4157684ed71763db.js": "/impress/precache-manifest.0bec89cdbf9b813a4157684ed71763db.js",
     "service-worker.js": "/impress/service-worker.js",
-    "static/css/main.894c6e4a.chunk.css.map": "/impress/static/css/main.894c6e4a.chunk.css.map",
+    "static/css/main.f0fa1e65.chunk.css.map": "/impress/static/css/main.f0fa1e65.chunk.css.map",
     "static/js/2.528cde6f.chunk.js.LICENSE.txt": "/impress/static/js/2.528cde6f.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/impress/static/media/Rubik-Regular.b3d0902b.ttf",
     "static/media/Icons.jpg": "/impress/static/media/Icons.a08762ed.jpg",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.182fd135.js",
     "static/js/2.528cde6f.chunk.js",
-    "static/css/main.894c6e4a.chunk.css",
+    "static/css/main.f0fa1e65.chunk.css",
     "static/js/main.6342cdd3.chunk.js"
   ]
 }
